@@ -11,4 +11,7 @@ $(document).ready(function () {
       1000
     );
   });
+
+  $(".p-md-5").hide();
+  $(".p-md-5").fadeIn(3000); // Animasi fadeIn dengan durasi 1000ms (1 detik)
 });
