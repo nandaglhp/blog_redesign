@@ -14,4 +14,12 @@ $(document).ready(function () {
 
   $(".p-md-5").hide();
   $(".p-md-5").fadeIn(3000); // Animasi fadeIn dengan durasi 1000ms (1 detik)
+  $(".p-md-5").hover(
+    function () {
+      $(this).css("background-color", "#666666"); // Mengubah warna background saat hover
+    },
+    function () {
+      $(this).css("background-color", ""); // Mengembalikan warna background saat mouse keluar
+    }
+  );
 });
