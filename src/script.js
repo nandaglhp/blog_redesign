@@ -225,4 +225,52 @@ $(document).ready(function () {
     e.preventDefault();
     $(this).toggleClass("btn-outline-secondary btn-secondary").text("Clicked!");
   });
+
+  // Animasi slide up and down pada Recent Posts
+  $(".list-unstyled li a").on("click", function (e) {
+    e.preventDefault();
+    var $postContent = $(this).find(".col-lg-8");
+    $postContent.slideToggle(500);
+  });
+
+  // Menyoroti postingan saat di-hover
+  $(".list-unstyled li a").hover(
+    function () {
+      $(this).css({
+        backgroundColor: "#f0f0f0",
+        transition: "background-color 0.5s",
+      });
+    },
+    function () {
+      $(this).css({
+        backgroundColor: "",
+        transition: "background-color 0.5s",
+      });
+    }
+  );
+
+  // Menambahkan efek rotasi pada ikon SVG saat di-hover
+  $(".list-unstyled li a svg").hover(
+    function () {
+      $(this).css({
+        transform: "rotate(15deg)",
+        transition: "transform 0.5s",
+      });
+    },
+    function () {
+      $(this).css({
+        transform: "rotate(0deg)",
+        transition: "transform 0.5s",
+      });
+    }
+  );
+
+  // Animasi menghilang pada ikon SVG saat di-click
+  $(".list-unstyled li a").on("click", function (e) {
+    e.preventDefault();
+    var $svgIcon = $(this).find("svg");
+    $svgIcon.fadeOut(500, function () {
+      $svgIcon.fadeIn(500);
+    });
+  });
 });
