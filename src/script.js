@@ -178,4 +178,51 @@ $(document).ready(function () {
 
   // Animasi untuk card
   $(".card").hide().fadeIn(3000);
+
+  // Animasi tombol muncul dengan efek slideDown
+  $(".blog-pagination a").hide().slideDown(1000);
+
+  // Animasi tombol saat di-click
+  $(".blog-pagination a").on("click", function (e) {
+    e.preventDefault();
+    $(this).animate(
+      {
+        fontSize: "1.5em",
+        padding: "15px",
+      },
+      500,
+      function () {
+        $(this).animate(
+          {
+            fontSize: "",
+            padding: "",
+          },
+          500
+        );
+      }
+    );
+  });
+
+  // Efek hover pada tombol dengan mengganti background color
+  $(".blog-pagination a").hover(
+    function () {
+      $(this).css("background-color", "lightgrey");
+    },
+    function () {
+      $(this).css("background-color", "");
+    }
+  );
+
+  // Tooltip saat tombol di-hover
+  $(".blog-pagination a")
+    .each(function () {
+      $(this).attr("title", "Klik untuk membuka " + $(this).text());
+    })
+    .tooltip();
+
+  // Efek toggle pada tombol Disabled
+  $(".disabled").on("click", function (e) {
+    e.preventDefault();
+    $(this).toggleClass("btn-outline-secondary btn-secondary").text("Clicked!");
+  });
 });
