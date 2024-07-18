@@ -17,6 +17,7 @@ $(document).ready(function () {
   $(".p-md-5").hover(
     function () {
       $(this).css("background-color", "#666666"); // Mengubah warna background saat hover
+      $(this).fadeIn(); // Efek fade in saat mouse masuk
     },
     function () {
       $(this).css("background-color", ""); // Mengembalikan warna background saat mouse keluar
