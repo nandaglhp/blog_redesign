@@ -43,4 +43,13 @@ $(document).ready(function () {
       $(this).css("transform", "scale(1)");
     }
   );
+
+  $("#carouselExampleCaptions").on("slide.bs.carousel", function () {
+    // Ambil elemen slide yang sedang aktif
+    var activeSlide = $(this).find(".carousel-item.active");
+
+    // Contoh animasi untuk elemen di dalam slide yang aktif
+    activeSlide.find("img").animate({ opacity: 0.5 }, 300);
+    activeSlide.find(".carousel-caption").slideUp(300);
+  });
 });
