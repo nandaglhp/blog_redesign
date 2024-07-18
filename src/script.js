@@ -273,4 +273,49 @@ $(document).ready(function () {
       $svgIcon.fadeIn(500);
     });
   });
+
+  // Animasi slide up pada keterangan penulis
+  $(".card-title").hover(
+    function () {
+      $(this).next(".card-text").slideDown(1000);
+    },
+    function () {
+      $(this).next(".card-text").slideUp(1000);
+    }
+  );
+
+  // Efek warna merah saat mengarahkan kursor ke arsip
+  $(".list-unstyled li a").hover(
+    function () {
+      $(this).css("color", "red");
+    },
+    function () {
+      $(this).css("color", "");
+    }
+  );
+
+  // Animasi rotate pada tombol di bagian Elsewhere
+  $(".list-unstyled li a").hover(
+    function () {
+      $(this).css({
+        transform: "rotate(15deg)",
+        transition: "transform 0.5s",
+      });
+    },
+    function () {
+      $(this).css({
+        transform: "rotate(0deg)",
+        transition: "transform 0.5s",
+      });
+    }
+  );
+
+  // Animasi penampakan dan penghilangan pada tombol Elsewhere
+  $(".list-unstyled li a").on("click", function (e) {
+    e.preventDefault();
+    var $link = $(this);
+    $link.fadeOut(500, function () {
+      $link.fadeIn(500);
+    });
+  });
 });
