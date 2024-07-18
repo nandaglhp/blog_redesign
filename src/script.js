@@ -23,4 +23,6 @@ $(document).ready(function () {
       $(this).css("background-color", ""); // Mengembalikan warna background saat mouse keluar
     }
   );
+
+  $(".trending-today").hide().fadeIn(4000);
 });
