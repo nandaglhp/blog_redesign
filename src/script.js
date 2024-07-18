@@ -77,4 +77,70 @@ $(document).ready(function () {
     var progressWidth = $(this).attr("aria-valuenow") + "%";
     $(this).css("width", progressWidth);
   });
+
+  // 1. Animasi slide up dan slide down pada header blog post
+  $(".blog-post h2").hide().slideDown(2000);
+
+  // 2. Animasi fade untuk paragraph pada hover
+  $(".blog-post p").hover(
+    function () {
+      $(this).fadeTo(500, 0.5);
+    },
+    function () {
+      $(this).fadeTo(500, 1);
+    }
+  );
+
+  // 3. Mengganti warna link pada hover
+  $(".blog-post a").hover(
+    function () {
+      $(this).css("color", "#ff0000");
+    },
+    function () {
+      $(this).css("color", "");
+    }
+  );
+
+  // 4. Menambah animasi pada blockquote
+  $(".blockquote").hover(
+    function () {
+      $(this).css({
+        "border-left": "5px solid #00f",
+        "background-color": "#666666",
+      });
+    },
+    function () {
+      $(this).css({
+        "border-left": "",
+        "background-color": "",
+      });
+    }
+  );
+
+  // 5. Membuat elemen list muncul dengan efek fade in
+  $(".accordion-body ul").hide();
+  $(".accordion-item button").click(function () {
+    $(this).closest(".accordion-item").find(".accordion-body ul").fadeToggle(1000);
+  });
+
+  // 6. Menambahkan animasi pada button accordion saat di klik
+  $(".accordion-button").click(function () {
+    $(this).toggleClass("active-button");
+    if ($(this).hasClass("active-button")) {
+      $(this).css({
+        "background-color": "#666666",
+        "border-bottom": "2px solid #333",
+      });
+    } else {
+      $(this).css({
+        "background-color": "",
+        "border-bottom": "",
+      });
+    }
+  });
+
+  // 7. Menambah animasi scroll ke atas halaman saat judul blog post di klik
+  $(".blog-post h2.display-5").click(function () {
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+  });
 });
