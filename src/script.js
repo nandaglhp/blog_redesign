@@ -318,4 +318,46 @@ $(document).ready(function () {
       $link.fadeIn(500);
     });
   });
+
+  // Animasi slide down saat memuat halaman
+  $("footer").slideDown(1000);
+
+  // Efek muncul saat hover pada link Back to top
+  $("footer a[href='#']").hover(
+    function () {
+      $(this).css("color", "blue");
+    },
+    function () {
+      $(this).css("color", "");
+    }
+  );
+
+  // Efek bayangan lembut pada kartu Support Us
+  $(".card").hover(
+    function () {
+      $(this).css("box-shadow", "5px 5px 10px rgba(0, 0, 0, 0.2)");
+    },
+    function () {
+      $(this).css("box-shadow", "");
+    }
+  );
+
+  // Animasi fade in pada teks kartu Support Us
+  $(".card-text").hide().fadeIn(1000);
+
+  // Efek berkedip pada judul kartu Support Us
+  $(".card-title").hover(function () {
+    $(this).fadeOut(200).fadeIn(200);
+  });
+
+  // Animasi scale pada tombol Trakteer saat di-click
+  $(".btn-primary").on("click", function () {
+    $(this)
+      .css("transform", "scale(1.1)")
+      .delay(200)
+      .queue(function () {
+        $(this).css("transform", "");
+        $(this).dequeue();
+      });
+  });
 });
