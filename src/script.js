@@ -52,4 +52,29 @@ $(document).ready(function () {
     activeSlide.find("img").animate({ opacity: 0.5 }, 300);
     activeSlide.find(".carousel-caption").slideUp(300);
   });
+
+  $(".border.rounded").hover(
+    function () {
+      $(this).addClass("shadow-lg");
+    },
+    function () {
+      $(this).removeClass("shadow-lg");
+    }
+  );
+
+  // Animasi untuk tombol "Continue reading"
+  $(".icon-link-hover").hover(
+    function () {
+      $(this).addClass("text-decoration-underline"); // Menambah garis bawah saat hover
+    },
+    function () {
+      $(this).removeClass("text-decoration-underline"); // Menghapus garis bawah saat tidak dihover
+    }
+  );
+
+  // Animasi untuk progress bar
+  $(".progress-bar").each(function () {
+    var progressWidth = $(this).attr("aria-valuenow") + "%";
+    $(this).css("width", progressWidth);
+  });
 });
