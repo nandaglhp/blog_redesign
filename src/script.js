@@ -143,4 +143,39 @@ $(document).ready(function () {
   $(".blog-post h2.display-5").click(function () {
     $("html, body").animate({ scrollTop: 0 }, "slow");
   });
+
+  // Animasi untuk judul blog post
+  $(".blog-post .display-5").hide().slideDown(2000);
+
+  // Efek hover pada nama penulis
+  $(".blog-post-meta a").hover(
+    function () {
+      $(this).css({
+        "font-weight": "bold",
+        color: "#ff5733",
+      });
+    },
+    function () {
+      $(this).css({
+        "font-weight": "normal",
+        color: "",
+      });
+    }
+  );
+
+  // Animasi untuk blockquote
+  $("blockquote").css("opacity", 0).animate({ opacity: 1 }, 3000);
+
+  // Efek hover pada tabel
+  $(".table").hover(
+    function () {
+      $(this).addClass("table-hover");
+    },
+    function () {
+      $(this).removeClass("table-hover");
+    }
+  );
+
+  // Animasi untuk card
+  $(".card").hide().fadeIn(3000);
 });
