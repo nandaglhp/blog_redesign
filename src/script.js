@@ -33,4 +33,14 @@ $(document).ready(function () {
       $(this).css("font-size", "");
     }
   );
+
+  $(".carousel-item").hover(
+    function () {
+      $(this).css("transform", "scale(1.1)");
+      $(this).css("transition", "transform 0.3s ease");
+    },
+    function () {
+      $(this).css("transform", "scale(1)");
+    }
+  );
 });
